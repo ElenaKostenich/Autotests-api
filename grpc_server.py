@@ -6,7 +6,7 @@ import user_service_pb2_grpc
 class UserServiceServicer(user_service_pb2_grpc.UserServiceServicer):
     def GetUser(self, request, context):
         print(f'Getting request for method GetUser from user:{request.username}')
-        return user_service_pb2.GetUserResponse(message= f'Hi {request.username} ')
+        return user_service_pb2.GetUserResponse(message= f'Hi {request.username} ', )
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
